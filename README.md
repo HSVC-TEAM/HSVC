@@ -47,8 +47,8 @@
   
 First of all, clone this repository to your local machine and access the main dir via the following command:
 ```
-git clone xxx
-cd HSVC_Replication
+git clone https://github.com/HSVC-TEAM/HSVC.git
+cd HSVC
 ```
 
 Then, install the python dependencies via the following command:
@@ -95,7 +95,7 @@ ADD LINK OF ORIGINAL BIG VUL REPO HERE
   <details open="open">
     <summary></summary>
   
-  #### Reproduce Main Results (Section x.x.x in the paper)
+  #### Reproduce Main Results (Section 4.4.1 in the paper)
   - HSVC (proposed approach)
     * Inference
     ```
@@ -108,6 +108,34 @@ ADD LINK OF ORIGINAL BIG VUL REPO HERE
     ```
     cd HSVC/HSVC_GraphCodeBERT
     sh train_teacher.sh
+    sh soft_distillation.sh
+    ```
+  - HSVC-CodeBERT
+    * Inference
+    ```
+    cd HSVC/HSVC_CodeBERT/saved_models/checkpoint-best-acc
+    sh download_models.sh
+    cd ../..
+    sh run_test.sh
+    ```
+    * Retrain
+    ```
+    cd HSVC/HSVC_CodeBERT
+    sh train_cnn_teacher.sh
+    sh soft_distillation.sh
+    ```
+  - HSVC-CodeGPT
+    * Inference
+    ```
+    cd HSVC/HSVC_CodeGPT/saved_models/checkpoint-best-acc
+    sh download_models.sh
+    cd ../..
+    sh run_test.sh
+    ```
+    * Retrain
+    ```
+    cd HSVC/HSVC_CodeGPT
+    sh train_cnn_teacher.sh
     sh soft_distillation.sh
     ```
   - Devign
@@ -208,57 +236,8 @@ ADD LINK OF ORIGINAL BIG VUL REPO HERE
  
   <details open="open">
     <summary></summary>
-  
-  #### Reproduce Generalization Results (Section x.x.x in the paper)
-  - HSVC-GraphCodeBERT
-    * Inference
-    ```
-    cd HSVC/HSVC_GraphCodeBERT/saved_models/checkpoint-best-acc
-    sh download_models.sh
-    cd ../..
-    sh run_test.sh
-    ```
-    * Retrain
-    ```
-    cd HSVC/HSVC_GraphCodeBERT
-    sh train_teacher.sh
-    sh soft_distillation.sh
-    ```
-  - HSVC-CodeBERT
-    * Inference
-    ```
-    cd HSVC/HSVC_CodeBERT/saved_models/checkpoint-best-acc
-    sh download_models.sh
-    cd ../..
-    sh run_test.sh
-    ```
-    * Retrain
-    ```
-    cd HSVC/HSVC_CodeBERT
-    sh train_cnn_teacher.sh
-    sh soft_distillation.sh
-    ```
-  - HSVC-CodeGPT
-    * Inference
-    ```
-    cd HSVC/HSVC_CodeGPT/saved_models/checkpoint-best-acc
-    sh download_models.sh
-    cd ../..
-    sh run_test.sh
-    ```
-    * Retrain
-    ```
-    cd HSVC/HSVC_CodeGPT
-    sh train_cnn_teacher.sh
-    sh soft_distillation.sh
-    ```
-  
-  </details>
     
-  <details open="open">
-    <summary></summary>
-    
-  #### Reproduce Data Imbalance Results (Section x.x.x in the paper)
+  #### Reproduce Ablation Results - Data Imbalance (Section 4.4.2-(1) in the paper)
   - GraphCodeBERT + Focal Loss
     * Inference
     ```
@@ -285,66 +264,13 @@ ADD LINK OF ORIGINAL BIG VUL REPO HERE
     cd baselines/GraphCodeBERT
     sh run_train_la.sh
     ```
-  - CodeBERT + Focal Loss
-    * Inference
-    ```
-    cd baselines/CodeBERT/saved_models/checkpoint-best-acc
-    sh download_models.sh
-    cd ../..
-    sh run_test_fl.sh
-    ```
-    * Retrain
-    ```
-    cd baselines/CodeBERT
-    sh run_train_fl.sh
-    ```
-  - CodeBERT + Logit Adjustment
-    * Inference
-    ```
-    cd baselines/CodeBERT/saved_models/checkpoint-best-acc
-    sh download_models.sh
-    cd ../..
-    sh run_test_la.sh
-    ```
-    * Retrain
-    ```
-    cd baselines/CodeBERT
-    sh run_train_la.sh
-    ```
-  - CodeGPT + Focal Loss
-    * Inference
-    ```
-    cd baselines/CodeGPT/saved_models/checkpoint-best-acc
-    sh download_models.sh
-    cd ../..
-    sh run_test_fl.sh
-    ```
-    * Retrain
-    ```
-    cd baselines/CodeGPT
-    sh run_train_fl.sh
-    ```
-  - CodeGPT + Logit Adjustment
-    * Inference
-    ```
-    cd baselines/CodeGPT/saved_models/checkpoint-best-acc
-    sh download_models.sh
-    cd ../..
-    sh run_test_la.sh
-    ```
-    * Retrain
-    ```
-    cd baselines/CodeGPT
-    sh run_train_la.sh
-    ```
-  
   </details>  
   
   <details open="open">
     <summary></summary>
     
-  #### Reproduce Ablation Results - Data Splitting (Section x.x.x-(1) in the paper)
-  - GraphCodeBERT + Group data by label frequency (GCB_FREQ)
+  #### Reproduce Ablation Results - Data Splitting (Section 4.4.2-(2)-(i) in the paper)
+  - GraphCodeBERT + Label Frequency Grouping
     * Inference
     ```
     cd ablation_lfme_group/LFME_GraphCodeBERT/saved_models/checkpoint-best-acc
@@ -358,90 +284,36 @@ ADD LINK OF ORIGINAL BIG VUL REPO HERE
     sh train_teacher.sh
     sh soft_distillation.sh
     ```
-  - CodeBERT + Group data by label frequency (CodeBERT_FREQ)
-    * Inference
-    ```
-    cd ablation_lfme_group/LFME_CodeBERT/saved_models/checkpoint-best-acc
-    sh download_models.sh
-    cd ../..
-    sh run_test.sh
-    ```
-    * Retrain
-    ```
-    cd ablation_lfme_group/LFME_CodeBERT
-    sh train_cnn_teacher.sh
-    sh soft_distillation.sh
-    ```
-  - CodeGPT + Group data by label frequency (CodeGPT_FREQ)
-    * Inference
-    ```
-    cd ablation_lfme_group/LFME_CodeGPT/saved_models/checkpoint-best-acc
-    sh download_models.sh
-    cd ../..
-    sh run_test.sh
-    ```
-    * Retrain
-    ```
-    cd ablation_lfme_group/LFME_CodeGPT
-    sh train_cnn_teacher.sh
-    sh soft_distillation.sh
-    ```
-  
   </details>
  
   <details open="open">
   <summary></summary>
     
-  #### Reproduce Ablation Results - Teacher Model (Section x.x.x-(2) in the paper)
-  - GraphCodeBERT + Transformer Teacher
+  #### Reproduce Ablation Results - Teacher Model (Section 4.4.2-(2)-(ii) in the paper)
+  - GraphCodeBERT + Non-shared TextCNN Teachers
     * Inference
     ```
-    cd ablation_xfmr_teacher/xfmr_GraphCodeBERT/saved_models/checkpoint-best-acc
-    sh download_models.sh
-    cd ../..
-    sh run_test.sh
+    xxx
     ```
     * Retrain
     ```
-    cd ablation_xfmr_teacher/xfmr_GraphCodeBERT
-    sh train_gcb_teacher.sh
-    sh soft_distillation.sh
+    xxx
     ```
-  - CodeBERT + Transformer Teacher
+  - GraphCodeBERT + GraphCodeBERT Teachers
     * Inference
     ```
-    cd ablation_xfmr_teacher/xfmr_CodeBERT/saved_models/checkpoint-best-acc
-    sh download_models.sh
-    cd ../..
-    sh run_test.sh
+    XXX
     ```
     * Retrain
     ```
-    cd ablation_xfmr_teacher/xfmr_CodeBERT
-    sh train_codebert_teacher.sh
-    sh soft_distillation.sh
+    XXX
     ```
-  - CodeGPT + Transformer Teacher
-    * Inference
-    ```
-    cd ablation_xfmr_teacher/xfmr_CodeGPT/saved_models/checkpoint-best-acc
-    sh download_models.sh
-    cd ../..
-    sh run_test.sh
-    ```
-    * Retrain
-    ```
-    cd ablation_xfmr_teacher/xfmr_CodeGPT
-    sh train_gpt_teacher.sh
-    sh soft_distillation.sh
-    ```
-  
   </details>
   
   <details open="open">
   <summary></summary>
     
-  #### Reproduce Ablation Results - Distillation Method (Section x.x.x-(3) in the paper)
+  #### Reproduce Ablation Results - Distillation Method (Section 4.4.2-(2)-(iii) in the paper)
   - GraphCodeBERT + Hard Distillation
     * Inference
     ```
@@ -456,35 +328,6 @@ ADD LINK OF ORIGINAL BIG VUL REPO HERE
     sh train_teacher.sh
     sh hard_distillation.sh
     ```
-  - CodeBERT + Hard Distillation
-    * Inference
-    ```
-    cd HSVC/HSVC_CodeBERT/saved_models/checkpoint-best-acc
-    sh download_models.sh
-    cd ../..
-    sh run_test_hard.sh
-    ```
-    * Retrain
-    ```
-    cd HSVC/HSVC_CodeBERT
-    sh train_cnn_teacher.sh
-    sh hard_distillation.sh
-    ```
-  - CodeGPT + Hard Distillation
-    * Inference
-    ```
-    cd HSVC/HSVC_CodeGPT/saved_models/checkpoint-best-acc
-    sh download_models.sh
-    cd ../..
-    sh run_test_hard.sh
-    ```
-    * Retrain
-    ```
-    cd HSVC/HSVC_CodeGPT
-    sh train_cnn_teacher.sh
-    sh hard_distillation.sh
-    ```
-  
   </details>
     
 ## Appendix 
