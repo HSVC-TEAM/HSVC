@@ -293,20 +293,30 @@ ADD LINK OF ORIGINAL BIG VUL REPO HERE
   - GraphCodeBERT + Non-shared TextCNN Teachers
     * Inference
     ```
-    xxx
+    cd ablation_non_shared_cnnteacher/Distil_GraphCodeBERT/saved_models/checkpoint-best-acc
+    sh download_models.sh
+    cd ../..
+    sh run_test.sh
     ```
     * Retrain
     ```
-    xxx
+    cd ablation_non_shared_cnnteacher/Distil_GraphCodeBERT
+    sh train_cnn_teacher.sh
+    sh soft_distillation.sh
     ```
   - GraphCodeBERT + GraphCodeBERT Teachers
     * Inference
     ```
-    XXX
+    cd ablation_gcb_teacher/Distil_GraphCodeBERT/saved_models/checkpoint-best-acc
+    sh download_models.sh
+    cd ../..
+    sh run_test.sh
     ```
     * Retrain
     ```
-    XXX
+    cd ablation_gcb_teacher/Distil_GraphCodeBERT
+    sh train_gcb_teacher.sh
+    sh soft_distillation.sh
     ```
   </details>
   
