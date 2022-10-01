@@ -2,7 +2,7 @@ python graphcodebert_main.py \
     --use_logit_adjustment \
     --tau 1 \
     --output_dir=./saved_models \
-    --model_name=logit_adj_cve_fixes_model.bin \
+    --model_name=logit_adj_model.bin \
     --tokenizer_name=microsoft/graphcodebert-base \
     --model_name_or_path=microsoft/graphcodebert-base \
     --train_data_file=../../data/big_vul/train.csv \

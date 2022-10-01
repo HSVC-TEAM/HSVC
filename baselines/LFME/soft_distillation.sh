@@ -3,9 +3,9 @@ python student_main.py \
     --model_name=soft_distil_textcnn.bin \
     --tokenizer_name=microsoft/codebert-base \
     --model_name_or_path=microsoft/codebert-base \
-    --train_data_file=../../LFME_data/big_vul/train.csv \
-    --eval_data_file=../../LFME_data/big_vul/val.csv \
-    --test_data_file=../../LFME_data/big_vul/test.csv \
+    --train_data_file=../../LFME_BAGS_data/big_vul/train.csv \
+    --eval_data_file=../../LFME_BAGS_data/big_vul/val.csv \
+    --test_data_file=../../LFME_BAGS_data/big_vul/test.csv \
     --do_train \
     --do_test \
     --block_size 512 \

@@ -297,13 +297,6 @@ def test(args, model, tokenizer, test_dataset):
     logger.info("***** Test results *****")
     for key in sorted(result.keys()):
         logger.info("  %s = %s", key, str(round(result[key],4)))
-
-    df = pd.read_csv(args.test_data_file)
-    df["y_trues"] = y_trues
-    df["y_preds"] = y_preds
-    df.to_csv("./raw_prediction/preds.csv")
-    print("done writing predictions")
-
     return y_trues, y_preds
 
 def main():
@@ -385,7 +378,7 @@ def main():
     args.n_gpu = 1
     args.device = device
 
-    with open("../data/big_vul/cwe_label_map.pkl", "rb") as f:
+    with open("../../LFME_BAGS_data/big_vul/cwe_label_map.pkl", "rb") as f:
         cwe_label_map = pickle.load(f)
     group_label_map = {"g1": 0, "g2": 1, "g3": 2}
     # Setup logging

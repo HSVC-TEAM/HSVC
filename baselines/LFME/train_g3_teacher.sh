@@ -3,9 +3,9 @@ python teacher_main.py \
     --model_name=g3_cnnteacher.bin \
     --tokenizer_name=microsoft/codebert-base \
     --model_name_or_path=microsoft/codebert-base \
-    --train_data_file=../../LFME_data/big_vul/g3/g3_train.csv \
-    --eval_data_file=../../LFME_data/big_vul/g3/g3_val.csv \
-    --test_data_file=../../LFME_data/big_vul/g3/g3_test.csv \
+    --train_data_file=../../LFME_BAGS_data/big_vul/g3/g3_train.csv \
+    --eval_data_file=../../LFME_BAGS_data/big_vul/g3/g3_val.csv \
+    --test_data_file=../../LFME_BAGS_data/big_vul/g3/g3_test.csv \
     --do_train \
     --do_test \
     --block_size 512 \

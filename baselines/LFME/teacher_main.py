@@ -335,7 +335,7 @@ def main():
     args.n_gpu = 1
     args.device = device
 
-    with open("../../data/big_vul/cwe_label_map.pkl", "rb") as f:
+    with open("../../LFME_BAGS_data/big_vul/cwe_label_map.pkl", "rb") as f:
         cwe_label_map = pickle.load(f)
     # Setup logging
     logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s -   %(message)s',datefmt='%m/%d/%Y %H:%M:%S',level=logging.INFO)
