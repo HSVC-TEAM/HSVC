@@ -8,7 +8,6 @@ python student_graphcodebert_main.py \
     --train_data_file=../../data/big_vul/train.csv \
     --eval_data_file=../../data/big_vul/val.csv \
     --test_data_file=../../data/big_vul/test.csv \
-    --do_train \
     --do_test \
     --block_size 512 \
     --epochs 50 \
