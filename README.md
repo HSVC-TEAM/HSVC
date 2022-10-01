@@ -53,13 +53,6 @@ cd HSVC
 
 Then, install the python dependencies via the following command:
 ```
-pip install transformers
-...
-```
-
-Alternatively, we provide requirements.txt with version of packages specified to ensure the reproducibility,
-you may install via the following commands:
-```
 pip install -r requirements.txt
 ```
 
@@ -82,12 +75,16 @@ cd ..
 ### Datasets
 <details open="open">
   <summary></summary>
-  
-All of the dataset has the same number of columns (i.e., 7 cols), we focus on the following 2 columns to conduct our experiments:
-1. source (str): ....
-2. TO ADD
 
-ADD LINK OF ORIGINAL BIG VUL REPO HERE
+The data folder contain csv files to reproduce most of the methods, we introduce x specific columns that are used in our experiments:
+1. "func_before": original vulnerable functions
+2. "CWE ID": CWE-ID labels
+3. "cwe_abstract_group": CWE abstract types 
+
+The LFME_BAGS_data are specific to reproduce LFME and BAGS-related approaches, the data is not grouped by "cwe_abstract_group", instead, it is grouped by:
+1. "label_dist": Groups split based on label frequencies, an alternative of "cwe_abstract_group" grouping.
+
+The data was originally collected from [Big-Vul Dataset](https://github.com/ZeoVan/MSR_20_Code_vulnerability_CSV_Dataset).
   
 </details>
  
