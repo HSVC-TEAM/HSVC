@@ -92,6 +92,17 @@ ADD LINK OF ORIGINAL BIG VUL REPO HERE
 </details>
  
 ### Replication of Experiments
+  
+  <details open="open">
+    <summary></summary>
+    
+  Download necessary data and unzip via the following command: 
+  ```
+  sh download_data.sh 
+  ```
+  
+  </details>  
+  
   <details open="open">
     <summary></summary>
   
