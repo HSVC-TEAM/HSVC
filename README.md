@@ -346,7 +346,7 @@ The data was originally collected from [Big-Vul Dataset](https://github.com/ZeoV
   </details>
     
 ## License 
-<a href="">MIT License</a>
+<a href="https://github.com/HSVC-TEAM/HSVC/blob/main/LICENSE">MIT License</a>
 
 ## Citation
 ```bash
