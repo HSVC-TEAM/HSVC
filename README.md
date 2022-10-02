@@ -28,9 +28,6 @@
         </ul>
     </li>
     <li>
-      <a href="#appendix">Appendix</a>
-    </li>
-    <li>
       <a href="#license">License</a>
     </li>
     <li>
@@ -348,9 +345,6 @@ The data was originally collected from [Big-Vul Dataset](https://github.com/ZeoV
     ```
   </details>
     
-## Appendix 
-TO ADD
-
 ## License 
 <a href="">MIT License</a>
 
