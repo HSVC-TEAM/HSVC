@@ -24,7 +24,7 @@
         <ul>
           <li><a href="#environment-setup">Environment Setup</a></li>
           <li><a href="#datasets">Datasets</a></li>
-          <li><a href="#experiments-replication">Experiments Replication</a></li>
+          <li><a href="#replication-of-experiments">Replication of Experiments</a></li>
         </ul>
     </li>
     <li>
