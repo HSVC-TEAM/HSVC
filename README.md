@@ -24,11 +24,8 @@
         <ul>
           <li><a href="#environment-setup">Environment Setup</a></li>
           <li><a href="#datasets">Datasets</a></li>
-          <li><a href="#experiments-replication">Experiments Replication</a></li>
+          <li><a href="#replication-of-experiments">Replication of Experiments</a></li>
         </ul>
-    </li>
-    <li>
-      <a href="#appendix">Appendix</a>
     </li>
     <li>
       <a href="#license">License</a>
@@ -348,11 +345,8 @@ The data was originally collected from [Big-Vul Dataset](https://github.com/ZeoV
     ```
   </details>
     
-## Appendix 
-TO ADD
-
 ## License 
-<a href="">MIT License</a>
+<a href="https://github.com/HSVC-TEAM/HSVC/blob/main/LICENSE">MIT License</a>
 
 ## Citation
 ```bash
